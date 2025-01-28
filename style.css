@@ -1,0 +1,654 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+:root{
+    --body-color: #efefef; 
+    --nav-color: #1876f2;
+    --bg-color: #fff;
+
+}
+
+.dark-theme{
+    --body-color: #0a0a0a; 
+    --nav-color: #000;
+    --bg-color: #000;
+
+
+}
+
+/* Ensure the entire page uses the full height of the viewport */
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--body-color); 
+    transition: background 0.3s; /* Sets a light gray background for the body */
+    padding: 10px; /* Adds padding around the body */
+}
+
+/* Navigation bar styles */
+nav {
+    display: flex; /* Flexbox layout for horizontal alignment */
+    align-items: center; /* Vertically centers child elements */
+    justify-content: space-between; /* Spaces out elements within the navigation */
+    background: var(--nav-color); /* Sets a blue background color */
+    padding: 5px 5%; /* Adds 5px padding on top and bottom, 5% on left and right */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo style */
+.logo {
+    width: 160px; /* Sets width of the logo */
+    margin-right: 45px; /* Adds space to the right of the logo */
+}
+
+/* Flexbox layout for both left and right sections in the nav */
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center; /* Vertically centers items in the section */
+}
+
+/* List items in nav-left (removes bullets and displays horizontally) */
+.nav-left ul li {
+    list-style: none; /* Removes bullet points */
+    display: inline-block; /* Displays list items inline */
+}
+
+/* Styles for images inside list items in nav-left */
+.nav-left ul li img {
+    width: 28px; /* Sets the size of the images */
+    margin: 0 15px; /* Adds space on either side of the images */
+}
+
+/* User icon in the navigation bar */
+.nav-user-icon img {
+    width: 40px; /* Sets size of the profile image */
+    border-radius: 50%; /* Makes the image circular */
+    cursor: pointer; /* Adds pointer cursor to indicate clickable element */
+}
+
+/* Adds margin to the user icon */
+.nav-user-icon {
+    margin-left: 30px;
+}
+
+/* Search box styles */
+.search-box {
+    background: #efefef; /* Sets a light gray background */
+    width: 350px; /* Sets the width of the search box */
+    border-radius: 20px; /* Adds rounded corners to the search box */
+    display: flex; /* Flexbox layout to align elements inside the search box */
+    align-items: center; /* Vertically centers the input and image */
+    padding: 0 15px; /* Adds padding inside the search box */
+}
+
+/* Sets the width of the search icon inside the search box */
+.search-box img {
+    width: 18px;
+}
+
+/* Styles the input field inside the search box */
+.search-box input {
+    width: 100%; /* Makes the input field take up the full width */
+    background: transparent; /* Makes the input background transparent */
+    padding: 10px; /* Adds padding inside the input field */
+    outline: none; /* Removes the default outline */
+    border: 0; /* Removes the border around the input */
+}
+
+/* Online indicator circle for the user icon */
+.online {
+    position: relative; /* Positions the element relative to its normal position */
+}
+
+/* Creates the small green circle to indicate online status */
+.online::after {
+    content: ''; /* Creates an empty content for the pseudo-element */
+    width: 7px; /* Sets the width of the circle */
+    height: 7px; /* Sets the height of the circle */
+    border: 2px solid #fff; /* Adds a white border around the circle */
+    border-radius: 50%; /* Makes the circle shape */
+    background-color: #41d1b1; /* Sets the green color for the circle */
+    position: absolute; /* Positions the circle absolutely within the .online element */
+    top: 0; /* Positions the circle at the top of the element */
+    right: 0; /* Positions the circle to the right of the element */
+    z-index: 5; /* Ensures the circle is displayed above other elements */
+}
+
+/* Main container for the content sections */
+.container {
+    display: flex; /* Flexbox layout for horizontal alignment of the three sections */
+    justify-content: space-between; /* Distributes the sections evenly with space in between */
+    align-items: flex-start; /* Aligns sections to the top */
+    padding: 13px 5%; /* Adds padding to the container */
+}
+
+/* Sidebar on the left */
+.left-sidebar, .right-sidebar {
+    flex-basis: 25%; /* Sets the width of the sidebar */
+    position: sticky; /* Makes the sidebar sticky within the viewport */
+    top: 70px; /* Starts the sticky position after 70px from the top */
+    align-self: flex-start; /* Aligns the sidebar at the top */
+}
+
+.right-sidebar{
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 4px;
+    color: #626262;
+}
+
+/* Main content area */
+.main-content {
+    flex-basis: 47%; /* Sets the width of the main content section */
+}
+/* General styles for links in .imp-links and .shortcut-links */
+.imp-links a, .text-post-section a {
+    text-decoration: none; /* Removes underline from links */
+    display: flex; /* Makes links use flexbox layout */
+    align-items: center; /* Vertically centers content inside links */
+    margin-bottom: 30px; /* Adds spacing below each link */
+    color: #626262; /* Sets text color to gray */
+    width: fit-content; /* Ensures links only take up as much space as needed */
+}
+
+/* Styling for images inside links in .img-links */
+.imp-links a img {
+    width: 25px; /* Sets image width */
+    margin-right: 30px; /* Adds space to the right of the image */
+}
+
+/* Special styling for the last child of .imp-links links */
+.imp-links a:last-child {
+    color: #1876f2; /* Sets text color to blue */
+}
+
+/* Adds a border below the .imp-links section */
+.imp-links {
+    border-bottom: 1px solid #ccc; /* Light gray border for separation */
+}
+/* Text post section styles */
+.text-post-section {
+    background: white; /* White background for the text post section */
+    padding: 20px; /* Adds padding inside the section */
+    border-radius: 10px; /* Smooth, rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 0px; /* Space below the section */
+}
+
+/* Heading for the text post section */
+.text-post-title {
+    font-size: 16px; /* Font size for the heading */
+    font-weight: 600; /* Makes the text bold */
+    color: #333; /* Darker text color */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+/* Text box for user input */
+.text-post-box {
+    width: 100%; /* Full width inside the container */
+    height: 100px; /* Height of the text box */
+    padding: 10px; /* Space inside the text box */
+    font-size: 14px; /* Font size for text inside the box */
+    color: #333; /* Dark text color */
+    border: 1px solid #ccc; /* Light border around the text box */
+    border-radius: 5px; /* Smooth, rounded corners */
+    outline: none; /* Removes focus outline */
+    resize: none; /* Disables resizing of the text box */
+    margin-bottom: 15px; /* Space below the text box */
+}
+
+/* Post button */
+.text-post-button {
+    background-color: #1876f2; /* Blue background */
+    color: white; /* White text color */
+    border: none; /* Removes border */
+    padding: 10px 20px; /* Adds padding inside the button */
+    font-size: 14px; /* Font size for the button text */
+    font-weight: 600; /* Makes the button text bold */
+    border-radius: 5px; /* Smooth, rounded corners */
+    cursor: pointer; /* Pointer cursor for hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Button hover effect */
+.text-post-button:hover {
+    background-color: #0056d2; /* Darker blue on hover */
+}
+
+/* Styling for images inside .shortcut-links */
+.shortcut-links a img {
+    width: 40px; /* Sets image width */
+    border-radius: 4px; /* Rounds corners slightly */
+    margin: 15px; /* Adds spacing around the image */
+}
+
+/* Paragraph styles inside .shortcut-links */
+.shortcut-links p {
+    margin: 25px 0; /* Adds vertical spacing around paragraphs */
+    color: #626262; /* Sets text color to gray */
+    font-weight: 500; /* Makes the text slightly bold */
+}
+
+/* Styling for sidebar titles */
+.sidebar-title {
+    display: flex; /* Flexbox layout for horizontal alignment */
+    align-items: center; /* Vertically centers items */
+    justify-content: space-between; /* Spreads items across the width */
+    margin-bottom: 18px; /* Adds space below the title */
+}
+
+/* Sidebar title heading styles */
+.right-sidebar h4 {
+    font-weight: 600; /* Makes the text bold */
+    font-size: 16px; /* Sets the font size */
+}
+
+/* Sidebar title link styles */
+.sidebar-title a {
+    text-decoration: none; /* Removes underline from links */
+    color: #1876f2; /* Sets text color to blue */
+    font-size: 12px; /* Reduces the font size for smaller links */
+}
+
+.event {
+    display: flex; /* Keeps the left and right sections side-by-side */
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.left-event {
+    border-radius: 10px;
+    height: 65px;
+    width: 65px;
+    margin-right: 15px;
+    padding-top: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-event span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1876f2;
+    color: white;
+    font-size: 10px;
+    padding: 4px 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Styles for the event text */
+.event p{
+    font-size: 12px;
+    margin: 5px 0; /* Adds spacing between lines */
+    line-height: 1.4; /* Increases spacing between lines */
+}
+
+/* Links inside the event text */
+.event p a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #1876f2;
+}
+
+.sidebar-ads{
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 4px;
+
+}
+
+.online-list{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.online-list .online img{
+    width: 40px;
+    border-radius: 50%;
+
+}
+
+.online-list .online{
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+
+}
+
+.online-list .online::after{
+    top: unset;
+    bottom: 5px;
+}
+
+.story-gallery{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.story{
+    flex-basis: 18%;
+    padding-top: 32%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+.story img{
+    position: absolute;
+    width: 45px;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+    border-radius: 5px solid #626262;
+    
+}
+
+.story p {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+.story1{
+    background-image:linear-gradient(transparent,rgba(0,0,0,5)),url(images/statusaksh.jpeg);
+}
+.story2{
+    background-image:linear-gradient(transparent,rgba(0,0,0,5)),url(images/vishal.png);
+    cursor: pointer;
+}
+.story3{
+    background-image:linear-gradient(transparent,rgba(0,0,0,5)),url(images/kuntal.png);
+    cursor: pointer;
+}
+.story4{
+    background-image:linear-gradient(transparent,rgba(0,0,0,5)),url(images/aditya.png);
+    cursor: pointer;
+}
+.story5{
+    background-image:linear-gradient(transparent,rgba(0,0,0,5)),url(images/garv.png);
+    cursor: pointer;
+}
+
+.story1 img{
+    top: unset;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    border: 0;
+    width: 35px;
+    cursor: pointer;
+
+}
+
+.right-post-container{
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+}
+
+.user-profile{
+    display: flex;
+    align-items: center;
+
+}
+.user-profile img{
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-profile p{
+    margin-bottom: -5px;
+    font-weight: 500;
+    color: #626262;
+}
+
+.user-profile small{
+    font-size: 10px;
+    padding-top: 10px;
+}
+
+.post-input-container{
+    padding-left: 55px;
+    padding-top: 20px;  
+}
+
+.post-input-container textarea{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    resize: none;
+
+}
+
+.add-post-links{
+    display: flex;
+    margin-top: 10px;
+}
+
+.add-post-links a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #626262;
+    font-size: 13px;
+    margin-right: 30px;
+
+}
+
+.add-post-links a img{
+    width: 20px;
+    margin-right: 10px;
+}
+
+.post-container{
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+    margin:20px 0;
+
+}
+
+.post-container span{
+    font-size: 12px;
+    color: #9a9a9a;
+    padding-top: 7px;
+
+}
+.post-container p{
+    padding-bottom: 5px;
+}
+
+.post-text{
+    color: #9a9a9a;
+    margin: 15px 0 ;
+    font-size: 15px;
+}
+
+.post-img{
+    width: 100%;
+    border-radius: 4px;
+    margin-block-start: 5px;
+}
+
+.post-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.activity-icons div img{
+    width: 18px;
+    margin-right:  10px;
+}
+
+.activity-icons div{
+    display: inline-flex;
+    align-items: center;
+    margin-right: 30px;
+
+}
+
+.post-profile-icon{
+    display: flex;
+    align-items: center;
+
+}
+
+.post-profile-icon img{
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+
+}
+.post-row a{
+    color: blue;
+}
+
+
+.load-more-btn{
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #9a9a9a;
+    color: #626262;
+    background: transparent;
+    border-radius: 4px;
+}
+
+.footer{
+    text-align: center;
+    color: #9a9a9a;
+    padding: 10px 20px;
+    font-size: 13px;
+}
+
+.settings-menu{
+    position: absolute;
+    width: 90%;
+    max-width: 350px;
+    background: var(--bg-color);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    border-radius: 4px;
+    overflow: hidden;
+    top: 108%;
+    right: 5%;
+    max-height: 0;
+    transition: max-height 0.3s;
+
+}
+
+.settings-menu-height{
+    max-height: 450px;
+
+}
+
+.user-profile a{
+    font-size: 12px;
+    color: #1876f2;
+    text-decoration: none;
+    width: 38px;
+    margin-right: 10px;
+    border-radius: 50%;
+    padding: 5px 5px;
+}
+
+.user-profile p{
+    padding: 5px 5px;
+
+}
+
+.settings-menu-inner{
+    padding: 20px;
+}
+.settings-menu-inner p{
+    padding-bottom: 5px;
+}
+.settings-menu-inner a{
+    padding-top: 5px;
+}
+.settings-links{
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+
+}
+
+.settings-links .settings-icon{
+    width: 38px;
+    margin-right: 10px;
+    border-radius: 50%;
+
+}
+
+.user-profile .user-icons{
+    width: 38px;
+    margin-right: 10px;
+    border-radius: 50%;
+
+}
+
+.settings-links a{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #1876f2;
+
+}
+
+#dark-btn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ccc;
+    width: 45px;
+    border-radius: 15px;
+    padding: 2px 3px;
+    cursor: pointer;
+    transition: padding-left 0.5s, background 0.5s;
+}
+
+#dark-btn span{
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    display: flex;
+}
+
+#dark-btn.dark-btn-on{
+    padding-left: 23px;
+    background: black;
+
+}
