@@ -1,0 +1,371 @@
+<!DOCTYPE html> <!-- Declares the document type as HTML5 -->
+<html lang="en"> <!-- Starts the HTML document with English language specified -->
+<head>
+    <meta charset="UTF-8"> <!-- Defines character encoding to UTF-8, supporting most characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsiveness by setting the viewport to the device width -->
+    <title>Socialize</title> <!-- Sets the title of the webpage that appears in the browser tab -->
+    <link rel="icon" href="images/faviconn.png" type="image/png">
+    <link rel="stylesheet" href="style.css"> <!-- Links an external CSS file to style the HTML content -->
+    <script src="https://kit.fontawesome.com/39a7d14044.js" crossorigin="anonymous"></script> <!-- Includes FontAwesome icons for use in the webpage -->
+</head>
+<body> <!-- Starts the body of the webpage -->
+
+    <nav> <!-- Navigation bar -->
+        <div class="nav-left"> <!-- Left section of the navbar -->
+            <img src="images/main logo.png" class="logo"> <!-- Logo image on the left -->
+            <ul> <!-- Unordered list of icons in the left navbar -->
+                <li><img src="images/notification.png"></li> <!-- Notification icon -->
+                <li><img src="images/inbox.png"></li> <!-- Inbox icon -->
+                <li><img src="images/video.png"></li> <!-- Video icon -->
+            </ul>
+        </div>
+
+        <div class="nav-right"> <!-- Right section of the navbar -->
+            <div class="search-box"> <!-- Search box container -->
+                <img src="images/search.png"> <!-- Search icon -->
+                <input type="text" placeholder="Search"> <!-- Text input for search functionality -->
+            </div>
+            <div class="nav-user-icon online" onclick="settingsMenuToggle()"> <!-- User profile icon, with an 'online' class for styling -->
+                <img src="images/aksh.jpg"> <!-- User profile image -->
+            </div>
+        </div>
+<!-- settings menu -->
+        <div class="settings-menu">
+
+            <div id="dark-btn" class="dark-btn-on">
+                <span></span>
+            </div>
+
+
+
+            <div class="settings-menu-inner">
+                <div class="user-profile">
+                    <img src="images/profilee.png" class="user-icons">
+                    <div>
+                        <p>Akshaansh Veer</p>
+                        <a href="#">See Your Profile</a>
+                    </div>
+                </div>
+                
+                <div class="user-profile">
+                    <img src="images/messagess.png" class="user-icons">
+                    <div>
+                        <p>Messages</p>
+                        <a href="#">Check Replies</a>
+                    </div>
+                </div>
+                
+                <div class="user-profile">
+                    <img src="images/archive.png" class="user-icons">
+                    <div>
+                        <p>Archives</p>
+                        <a href="#">See Your Archived Posts</a>
+                    </div>
+                </div>
+            
+                <div class="settings-links">
+                    <img src="images/settingss.png" class="settings-icon">
+                    <a href="#">Settings & Privacy <img src="images/arrow.png" width="10px"></a>
+                </div>
+
+                <div class="settings-links">
+                    <img src="images/logout1.png" class="settings-icon">
+                    <a href="#">Logout of your Device<img src="images/arrow.png" width="10px"></a>
+                </div>
+
+                <div class="settings-links">
+                    <img src="images/helpe.png" class="settings-icon">
+                    <a href="#">Help & Support<img src="images/arrow.png" width="10px"></a>
+                </div>
+
+
+                <!-- <div class="user-profile">
+                    
+                    <div>
+                        <p>Settings</p>
+                        
+                    </div>
+                </div>
+
+                <div class="user-profile">
+                    <img src="images/logout1.png">
+                    <div>
+                        <p>Log-Out</p>
+                        <a href="#">Log Out Of Device</a>
+                    </div>
+                </div> -->
+            </div>
+            
+
+        </div>
+    </nav>
+
+    <div class="container"> <!-- Main content container, holds the left-sidebar, main content, and right-sidebar -->
+        <div class="left-sidebar"> <!-- Left sidebar section -->
+            <!-- Left sidebar content like links and text post section -->
+            <div class="imp-links"> <!-- Important links section in the left sidebar -->
+                <a href="#"><img src="images/news.png"> Latest News </a> <!-- Link to latest news -->
+                <a href="#"><img src="images/friends.png"> Friends </a> <!-- Link to friends section -->
+                <a href="#"><img src="images/group.png"> Group </a> <!-- Link to group section -->
+                <a href="#"><img src="images/marketplace.png"> Market Place </a> <!-- Link to marketplace -->
+                <a href="#"><img src="images/watch.png"> Watch </a> <!-- Link to watch section -->
+                <a href="#">See More</a> <!-- Link to see more options -->
+            </div>
+
+            <!-- The new Text Post Section -->
+            <div class="text-post-section"> <!-- Container for the text post section -->
+                <p class="text-post-title">What's on your mind today?</p> <!-- Heading for the text post section -->
+                <textarea class="text-post-box" placeholder="Share your thoughts..."></textarea> <!-- Textbox for the user to type their post -->
+                <button class="text-post-button">Post</button> <!-- Button to post the text -->
+            </div>
+        </div>
+
+        <div class="main-content"> <!-- Main content section, which could hold the primary posts or other content -->
+            <!-- Main content code -->
+             <div class="story-gallery">
+                <div class="story story1">
+                    <img src="images/upload.png">
+                    <p>Post Story</p>
+                </div>
+                <div class="story story2">
+                    <p>Vishal Soni</p>
+                </div>
+                <div class="story story3">
+                    <p>Shivansh</p>
+                </div>
+                <div class="story story4">
+                    <p>Aditya</p>
+                </div>
+                <div class="story story5">
+                    <p>Garv Anand</p>
+                </div>
+             </div>
+
+             <div class="right-post-container">
+                <div class="user-profile">
+                    <img src="images/aksh.jpg">
+                    <div>
+                        <p>Akshaansh Veer</p>
+                        <small>Public  <i class="fa-solid fa-chevron-down"></i></small>
+                    </div>
+                </div>
+
+                <div class="post-input-container">
+                    <textarea rows = "3" placeholder="Let world get to know you, post something aksh"></textarea>
+                    <div class="add-post-links">
+                        <a href="#"><img src="images/live-video.png">Live Video</a>
+                        <a href="#"><img src="images/photo.png">Photo/Video</a>
+                        <a href="#"><img src="images/feeling.png">Feeling/Activity</a>
+                    </div>
+                 </div>
+
+             </div>
+
+             <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="images/aditya.png">
+                        <div>
+                            <p>Aditya Kulkarni</p>
+                            <span>28 Jan 2025 2:00pm</span>
+                        </div>
+                    </div>
+                    <a href="#" ><i class="fa-solid fa-ellipsis-vertical"></i></a>
+
+                </div>
+                
+                <p class="Post-text">Rao Sahab , Never Mess.</p>
+                <img src="images/raosahab.png" class="post-img">
+
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="images/like.png">50,120</div>
+                        <div><img src="images/comments.png">2,300</div>
+                        <div><img src="images/share.png">98</div>
+
+
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="images/aksh.jpg"><i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    
+                </div>
+
+             </div>
+
+             <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="images/garv.png">
+                        <div>
+                            <p>Garv Anand</p>
+                            <span>29 Jan 2025 9:00pm</span>
+                        </div>
+                    </div>
+                    <a href="#" ><i class="fa-solid fa-ellipsis-vertical"></i></a>
+
+                </div>
+                
+                <p class="Post-text">Asli Rao Sahab.</p>
+                <img src="images/vinayak.png" class="post-img">
+
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="images/like-blue.png">1,01,120</div>
+                        <div><img src="images/comments.png">7,300</div>
+                        <div><img src="images/share.png">981</div>
+
+
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="images/aksh.jpg"><i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    
+                </div>
+
+             </div>
+
+
+             <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="images/vishal.png">
+                        <div>
+                            <p>Vishal Soni</p>
+                            <span>31 Jan 2025 10:00pm</span>
+                        </div>
+                    </div>
+                    <a href="#" ><i class="fa-solid fa-ellipsis-vertical"></i></a>
+
+                </div>
+                
+                <p class="Post-text">Rao Sahab Diff.</p>
+                <img src="images/raosahabdiff.jpg" class="post-img">
+
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="images/like-blue.png">10,01,120</div>
+                        <div><img src="images/comments.png">71,300</div>
+                        <div><img src="images/share.png">9181</div>
+
+
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="images/aksh.jpg"><i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    
+                </div>
+
+             </div>
+
+             <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="images/garv.png">
+                        <div>
+                            <p>Garv Anand</p>
+                            <span>1 feb 2025 11:00pm</span>
+                        </div>
+                    </div>
+                    <a href="#" ><i class="fa-solid fa-ellipsis-vertical"></i></a>
+
+                </div>
+                
+                <p class="Post-text">bruh ? SIT.</p>
+                <img src="images/difffr.jpg" class="post-img">
+
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="images/like-blue.png">1,11,01,120</div>
+                        <div><img src="images/comments.png">2,27,300</div>
+                        <div><img src="images/share.png">22,981</div>
+
+
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="images/aksh.jpg"><i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    
+                </div>
+
+             </div>
+
+
+             <button type="button" class="load-more-btn">Load More</button>
+
+
+
+
+
+
+        </div>
+
+        <div class="right-sidebar"> <!-- Right sidebar section -->
+            <!-- Right sidebar content like events, ads, conversations, etc. -->
+            <div class="sidebar-title"> <!-- Sidebar title section for "Events" -->
+                <h4>Events</h4> <!-- Heading for events section -->
+                <a href="#">See All</a> <!-- Link to see all events -->
+            </div>
+            <div class="event"> <!-- Event section -->
+                <div class="left-event"> <!-- Left side of the event, shows date -->
+                    <h3>15</h3> <!-- Day of the event -->
+                    <span>February</span> <!-- Month of the event -->
+                </div>
+                <div class="right-event"> <!-- Right side of the event, shows event details -->
+                    <h4>Prateek Kuhad Concert</h4> <!-- Event name -->
+                    <p><i class="fa-solid fa-location-dot"></i> Delhi, India</p> <!-- Event location with FontAwesome icon -->
+                    <a href="#">More Info</a> <!-- Link to more event details -->
+                </div>
+            </div>
+            
+            <div class="event"> <!-- Event section -->
+                <div class="left-event"> <!-- Left side of the event, shows date -->
+                    <h3>27</h3> <!-- Day of the event -->
+                    <span>March</span> <!-- Month of the event -->
+                </div>
+                <div class="right-event"> <!-- Right side of the event, shows event details -->
+                    <h4>Bassi Show</h4> <!-- Event name -->
+                    <p><i class="fa-solid fa-location-dot"></i> South Goa</p> <!-- Event location with FontAwesome icon -->
+                    <a href="#">More Info</a> <!-- Link to more event details -->
+                </div>
+            </div>
+
+            <div class="sidebar-title"> <!-- Another sidebar section for "Advertisement" -->
+                <h4>Advertisement</h4> <!-- Heading for advertisement -->
+                <a href="#">Close</a> <!-- Link to close the ad -->
+            </div>
+            <img src="images/ipl ad.png" class="sidebar-ads"> <!-- Advertisement image -->
+
+            <div class="sidebar-title"> <!-- Sidebar section for conversations -->
+                <h4>Conversation</h4> <!-- Heading for conversation section -->
+                <a href="#">hide chat</a> <!-- Link to hide chat -->
+            </div>
+
+            <div class="online-list"> <!-- List of online users -->
+                <div class="online"> <!-- User online status indicator -->
+                    <img src="images/kuntal.png"> <!-- Profile image of user -->
+                </div>
+                <p>Shivansh Kuntal</p> <!-- Username of the online user -->
+            </div>
+            <div class="online-list"> <!-- Another online user -->
+                <div class="online">
+                    <img src="images/aditya.png"> <!-- Profile image of user -->
+                </div>
+                <p>Aditya Kulkarni</p> <!-- Username of the online user -->
+            </div>
+            <div class="online-list"> <!-- Another online user -->
+                <div class="online">
+                    <img src="images/vishal.png"> <!-- Profile image of user -->
+                </div>
+                <p>Vishal Soni</p> <!-- Username of the online user -->
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright 2004 - hmu guys @ fr</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
